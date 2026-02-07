@@ -1,6 +1,6 @@
 {
   "name": "clifolio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI that generates a beautiful interactive terminal-based portfolio/resume from a YAML config",
   "type": "module",
   "main": "dist/index.js",
