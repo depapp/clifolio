@@ -13,7 +13,7 @@ A CLI that generates a beautiful, interactive terminal-based portfolio/resume fr
 - 🔗 **Open links** — press `o` to open project URLs or contact links in your browser
 - ✍️ **Typing animation** — smooth character-by-character reveal effect
 - 🖥️ **GitHub Gist integration** — host your config as a gist, share via `npx clifolio @you`
-- 🛠️ **Interactive scaffolder** — `clifolio init` creates a config file for you
+- 🛠️ **Interactive scaffolder** — `npx clifolio@latest init` creates a config file for you
 - ⚡ **Loading spinner** — animated feedback while fetching remote portfolios
 - 🎯 **Friendly errors** — clear, actionable error messages
 
