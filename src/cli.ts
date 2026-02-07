@@ -1,4 +1,6 @@
 import { Command } from "commander";
+import figlet from "figlet";
+import chalk from "chalk";
 import { loadPortfolio } from "./config/loader.js";
 
 export interface CliOptions {
@@ -10,6 +12,12 @@ export interface CliOptions {
   output?: string;
 }
 
+function showBanner() {
+  const banner = figlet.textSync("clifolio", { font: "Small" });
+  console.log(`\n${chalk.cyan(banner)}`);
+  console.log(chalk.dim("  Portfolios that live in the terminal.\n"));
+}
+
 export async function parseCli(argv: string[]): Promise<CliOptions> {
   let result: CliOptions | undefined;
 
@@ -18,7 +26,7 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
   program
     .name("clifolio")
     .description(
-      "🖥️  View developer portfolios right in your terminal"
+      "Portfolios that live in the terminal."
     )
     .version("1.0.0");
 
@@ -44,16 +52,14 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
     .action((source, opts) => {
       const resolvedSource = opts.file ?? source;
       if (!resolvedSource) {
-        console.log(
-          "\n  🖥️  clifolio — View developer portfolios in your terminal\n"
-        );
+        showBanner();
         console.log("  Usage:");
-        console.log("    clifolio @username          Fetch portfolio from GitHub Gist");
-        console.log("    clifolio --file config.yml  Load from local YAML file");
-        console.log("    clifolio init               Create a new config interactively\n");
+        console.log("    npx clifolio@latest @username          Fetch portfolio from GitHub Gist");
+        console.log("    npx clifolio@latest --file config.yml  Load from local YAML file");
+        console.log("    npx clifolio@latest init               Create a new config interactively\n");
         console.log("  Examples:");
-        console.log("    npx clifolio @janedoe");
-        console.log("    npx clifolio --file portfolio.yml --theme dracula\n");
+        console.log("    npx clifolio@latest @janedoe");
+        console.log("    npx clifolio@latest --file portfolio.yml --theme dracula\n");
         process.exit(0);
       }
       result = {

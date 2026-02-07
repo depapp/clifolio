@@ -13,7 +13,7 @@ function formatZodError(err: ZodError): string {
 export async function loadFromFile(filePath: string): Promise<Portfolio> {
   if (!existsSync(filePath)) {
     throw new Error(
-      `File not found: ${filePath}\n\n  Run \`clifolio init\` to create a config file, or provide a valid path.`
+      `File not found: ${filePath}\n\n  Run \`npx clifolio@latest init\` to create a config file, or provide a valid path.`
     );
   }
 
@@ -86,7 +86,7 @@ export async function loadFromGist(username: string): Promise<Portfolio> {
 
   if (!gist) {
     throw new Error(
-      `No clifolio.yml gist found for @${username}.\n\n  To set up your portfolio:\n    1. Run \`clifolio init\` to create a config file\n    2. Create a public GitHub Gist named "clifolio.yml"\n    3. Paste your config content into the gist`
+      `No clifolio.yml gist found for @${username}.\n\n  To set up your portfolio:\n    1. Run \`npx clifolio@latest init\` to create a config file\n    2. Create a public GitHub Gist named "clifolio.yml"\n    3. Paste your config content into the gist`
     );
   }
 

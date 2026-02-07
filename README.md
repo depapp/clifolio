@@ -2,7 +2,7 @@
 
 > View developer portfolios right in your terminal
 
-A CLI that generates a beautiful, interactive terminal-based portfolio/resume from a YAML config. Anyone can run `npx clifolio @username` to see your portfolio with animations, project showcases, and contact info — right in the terminal.
+A CLI that generates a beautiful, interactive terminal-based portfolio/resume from a YAML config. Anyone can run `npx clifolio@latest @username` to see your portfolio with animations, project showcases, and contact info — right in the terminal.
 
 ![clifolio demo](https://raw.githubusercontent.com/yourusername/clifolio/main/demo.gif)
 
@@ -16,7 +16,7 @@ A CLI that generates a beautiful, interactive terminal-based portfolio/resume fr
 - 💼 **Work timeline** — clean timeline layout for experience
 - 🔗 **Open links** — press `o` to open project URLs or contact links in your browser
 - ✍️ **Typing animation** — smooth character-by-character reveal effect
-- 🖥️ **GitHub Gist integration** — host your config as a gist, share via `npx clifolio @you`
+- 🖥️ **GitHub Gist integration** — host your config as a gist, share via `npx clifolio@latest @you`
 - 🛠️ **Interactive scaffolder** — `clifolio init` creates a config file for you
 - ⚡ **Loading spinner** — animated feedback while fetching remote portfolios
 - 🎯 **Friendly errors** — clear, actionable error messages
@@ -25,13 +25,13 @@ A CLI that generates a beautiful, interactive terminal-based portfolio/resume fr
 
 ```bash
 # View someone's portfolio
-npx clifolio @username
+npx clifolio@latest @username
 
 # View from a local YAML file
-npx clifolio --file portfolio.yml
+npx clifolio@latest --file portfolio.yml
 
 # Create your own portfolio config
-npx clifolio init
+npx clifolio@latest init
 ```
 
 ## 📋 Setup Your Portfolio
@@ -39,7 +39,7 @@ npx clifolio init
 ### Step 1: Create your config file
 
 ```bash
-npx clifolio init
+npx clifolio@latest init
 ```
 
 This will interactively ask for your name, title, tagline, and GitHub username, then generate a `clifolio.yml` file.
@@ -51,7 +51,7 @@ Open `clifolio.yml` and fill in your skills, experience, projects, education, an
 ### Step 3: Preview locally
 
 ```bash
-npx clifolio --file clifolio.yml
+npx clifolio@latest --file clifolio.yml
 ```
 
 Make sure everything looks good before publishing.
@@ -72,14 +72,14 @@ This is how other people will access your portfolio from anywhere in the world.
 Once your gist is live, anyone can view your portfolio by running:
 
 ```bash
-npx clifolio @yourgithubusername
+npx clifolio@latest @yourgithubusername
 ```
 
 That's it! No servers, no hosting, no deployments. Your portfolio lives as a simple gist and is viewable from any terminal in the world.
 
 ### How it works under the hood
 
-When someone runs `npx clifolio @username`, the CLI:
+When someone runs `npx clifolio@latest @username`, the CLI:
 1. Calls the GitHub API to list the user's public gists
 2. Finds the gist containing a file named `clifolio.yml`
 3. Downloads the raw YAML content
@@ -179,7 +179,7 @@ Five built-in color themes:
 Override with `--theme`:
 
 ```bash
-npx clifolio @username --theme dracula
+npx clifolio@latest @username --theme dracula
 ```
 
 ## 🛠️ Development
