@@ -54,12 +54,12 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
       if (!resolvedSource) {
         showBanner();
         console.log("  Usage:");
-        console.log("    npx clifolio@latest @username          Fetch portfolio from GitHub Gist");
-        console.log("    npx clifolio@latest --file config.yml  Load from local YAML file");
-        console.log("    npx clifolio@latest init               Create a new config interactively\n");
+        console.log("    npx clifolio @username             Fetch portfolio from GitHub Gist");
+        console.log("    npx clifolio --file config.yml     Load from local YAML file");
+        console.log("    npx clifolio@latest init           Create a new config interactively\n");
         console.log("  Examples:");
-        console.log("    npx clifolio@latest @janedoe");
-        console.log("    npx clifolio@latest --file portfolio.yml --theme dracula\n");
+        console.log("    npx clifolio @janedoe");
+        console.log("    npx clifolio --file portfolio.yml --theme dracula\n");
         process.exit(0);
       }
       result = {

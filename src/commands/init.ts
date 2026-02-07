@@ -94,9 +94,9 @@ export async function runInit(outputPath: string = "clifolio.yml") {
     console.log(`\n  ✅ Created ${outputPath}`);
     console.log(`\n  Next steps:`);
     console.log(`    1. Edit ${outputPath} to fill in your details`);
-    console.log(`    2. Preview: npx clifolio@latest --file ${outputPath}`);
+    console.log(`    2. Preview: npx clifolio --file ${outputPath}`);
     console.log(`    3. Create a public GitHub Gist named "clifolio.yml"`);
-    console.log(`    4. Share: npx clifolio@latest @${github}\n`);
+    console.log(`    4. Share: npx clifolio @${github}\n`);
   } finally {
     rl.close();
   }
