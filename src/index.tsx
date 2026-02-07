@@ -31,7 +31,7 @@ function Loader({ source, themeOverride, animate }: LoaderProps) {
       <Box flexDirection="column" paddingY={1} paddingX={2}>
         <Text color="#FF6B6B" bold>  ❌ Error</Text>
         <Text color="#ABB2BF">  {error}</Text>
-        <Text color="#5C6370">{"\n"}  Run `termfolio --help` for usage info.</Text>
+        <Text color="#5C6370">{"\n"}  Run `clifolio --help` for usage info.</Text>
       </Box>
     );
   }

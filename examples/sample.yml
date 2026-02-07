@@ -42,10 +42,10 @@ experience:
     description: "Worked on the search infrastructure team, optimizing query performance and building data pipelines."
 
 projects:
-  - name: "termfolio"
+  - name: "clifolio"
     description: "Terminal portfolio generator — view developer portfolios right in your terminal"
     tech: ["TypeScript", "React", "Ink"]
-    url: "https://github.com/janedoe/termfolio"
+    url: "https://github.com/janedoe/clifolio"
     stars: 1200
   - name: "fastql"
     description: "A blazing-fast GraphQL server framework with automatic schema generation"

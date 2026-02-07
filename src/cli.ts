@@ -16,7 +16,7 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
   const program = new Command();
 
   program
-    .name("termfolio")
+    .name("clifolio")
     .description(
       "🖥️  View developer portfolios right in your terminal"
     )
@@ -24,8 +24,8 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
 
   program
     .command("init")
-    .description("Create a new termfolio.yml config file interactively")
-    .option("-o, --output <path>", "Output file path", "termfolio.yml")
+    .description("Create a new clifolio.yml config file interactively")
+    .option("-o, --output <path>", "Output file path", "clifolio.yml")
     .action((opts) => {
       result = {
         command: "init",
@@ -45,15 +45,15 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
       const resolvedSource = opts.file ?? source;
       if (!resolvedSource) {
         console.log(
-          "\n  🖥️  termfolio — View developer portfolios in your terminal\n"
+          "\n  🖥️  clifolio — View developer portfolios in your terminal\n"
         );
         console.log("  Usage:");
-        console.log("    termfolio @username          Fetch portfolio from GitHub Gist");
-        console.log("    termfolio --file config.yml  Load from local YAML file");
-        console.log("    termfolio init               Create a new config interactively\n");
+        console.log("    clifolio @username          Fetch portfolio from GitHub Gist");
+        console.log("    clifolio --file config.yml  Load from local YAML file");
+        console.log("    clifolio init               Create a new config interactively\n");
         console.log("  Examples:");
-        console.log("    npx termfolio @janedoe");
-        console.log("    npx termfolio --file portfolio.yml --theme dracula\n");
+        console.log("    npx clifolio @janedoe");
+        console.log("    npx clifolio --file portfolio.yml --theme dracula\n");
         process.exit(0);
       }
       result = {

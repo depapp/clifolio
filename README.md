@@ -1,10 +1,10 @@
-# termfolio 🖥️
+# clifolio 🖥️
 
 > View developer portfolios right in your terminal
 
-A CLI that generates a beautiful, interactive terminal-based portfolio/resume from a YAML config. Anyone can run `npx termfolio @username` to see your portfolio with animations, project showcases, and contact info — right in the terminal.
+A CLI that generates a beautiful, interactive terminal-based portfolio/resume from a YAML config. Anyone can run `npx clifolio @username` to see your portfolio with animations, project showcases, and contact info — right in the terminal.
 
-![termfolio demo](https://raw.githubusercontent.com/yourusername/termfolio/main/demo.gif)
+![clifolio demo](https://raw.githubusercontent.com/yourusername/clifolio/main/demo.gif)
 
 ## ✨ Features
 
@@ -16,8 +16,8 @@ A CLI that generates a beautiful, interactive terminal-based portfolio/resume fr
 - 💼 **Work timeline** — clean timeline layout for experience
 - 🔗 **Open links** — press `o` to open project URLs or contact links in your browser
 - ✍️ **Typing animation** — smooth character-by-character reveal effect
-- 🖥️ **GitHub Gist integration** — host your config as a gist, share via `npx termfolio @you`
-- 🛠️ **Interactive scaffolder** — `termfolio init` creates a config file for you
+- 🖥️ **GitHub Gist integration** — host your config as a gist, share via `npx clifolio @you`
+- 🛠️ **Interactive scaffolder** — `clifolio init` creates a config file for you
 - ⚡ **Loading spinner** — animated feedback while fetching remote portfolios
 - 🎯 **Friendly errors** — clear, actionable error messages
 
@@ -25,27 +25,27 @@ A CLI that generates a beautiful, interactive terminal-based portfolio/resume fr
 
 ```bash
 # View someone's portfolio
-npx termfolio @username
+npx clifolio @username
 
 # View from a local YAML file
-npx termfolio --file portfolio.yml
+npx clifolio --file portfolio.yml
 
 # Create your own portfolio config
-npx termfolio init
+npx clifolio init
 ```
 
 ## 📋 Setup Your Portfolio
 
-1. Run `npx termfolio init` to scaffold your `termfolio.yml`
+1. Run `npx clifolio init` to scaffold your `clifolio.yml`
 2. Edit the file with your details
-3. Preview locally: `npx termfolio --file termfolio.yml`
-4. Create a **public** GitHub Gist named `termfolio.yml`
-5. Share: `npx termfolio @yourgithubusername`
+3. Preview locally: `npx clifolio --file clifolio.yml`
+4. Create a **public** GitHub Gist named `clifolio.yml`
+5. Share: `npx clifolio @yourgithubusername`
 
 ## Usage
 
 ```
-Usage: termfolio [options] [command]
+Usage: clifolio [options] [command]
 
 🖥️  View developer portfolios right in your terminal
 
@@ -54,7 +54,7 @@ Options:
   -h, --help            display help for command
 
 Commands:
-  init                  Create a new termfolio.yml config file interactively
+  init                  Create a new clifolio.yml config file interactively
   view [options] [source]  View a portfolio in the terminal (default)
 ```
 
@@ -77,7 +77,7 @@ Commands:
 
 ## 📝 Config Reference
 
-Create a `termfolio.yml` file with the following structure:
+Create a `clifolio.yml` file with the following structure:
 
 ```yaml
 theme: ocean  # Options: default, ocean, dracula, monokai, nord
@@ -135,7 +135,7 @@ Five built-in color themes:
 Override with `--theme`:
 
 ```bash
-npx termfolio @username --theme dracula
+npx clifolio @username --theme dracula
 ```
 
 ## 🛠️ Development

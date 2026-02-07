@@ -2,8 +2,8 @@ import { writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { createInterface } from "node:readline/promises";
 
-const TEMPLATE = `# termfolio.yml — Your terminal portfolio
-# Docs: https://github.com/yourusername/termfolio
+const TEMPLATE = `# clifolio.yml — Your terminal portfolio
+# Docs: https://github.com/yourusername/clifolio
 
 theme: ocean  # Options: default, ocean, dracula, monokai, nord
 
@@ -64,13 +64,13 @@ async function prompt(
   return answer.trim() || defaultValue;
 }
 
-export async function runInit(outputPath: string = "termfolio.yml") {
+export async function runInit(outputPath: string = "clifolio.yml") {
   if (existsSync(outputPath)) {
     console.error(`\n  ⚠️  ${outputPath} already exists. Use a different filename or delete the existing file.\n`);
     process.exit(1);
   }
 
-  console.log("\n  🖥️  Welcome to termfolio! Let's create your portfolio config.\n");
+  console.log("\n  🖥️  Welcome to clifolio! Let's create your portfolio config.\n");
 
   const rl = createInterface({
     input: process.stdin,
@@ -94,9 +94,9 @@ export async function runInit(outputPath: string = "termfolio.yml") {
     console.log(`\n  ✅ Created ${outputPath}`);
     console.log(`\n  Next steps:`);
     console.log(`    1. Edit ${outputPath} to fill in your details`);
-    console.log(`    2. Preview: npx termfolio --file ${outputPath}`);
-    console.log(`    3. Create a public GitHub Gist named "termfolio.yml"`);
-    console.log(`    4. Share: npx termfolio @${github}\n`);
+    console.log(`    2. Preview: npx clifolio --file ${outputPath}`);
+    console.log(`    3. Create a public GitHub Gist named "clifolio.yml"`);
+    console.log(`    4. Share: npx clifolio @${github}\n`);
   } finally {
     rl.close();
   }

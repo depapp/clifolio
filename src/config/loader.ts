@@ -13,7 +13,7 @@ function formatZodError(err: ZodError): string {
 export async function loadFromFile(filePath: string): Promise<Portfolio> {
   if (!existsSync(filePath)) {
     throw new Error(
-      `File not found: ${filePath}\n\n  Run \`termfolio init\` to create a config file, or provide a valid path.`
+      `File not found: ${filePath}\n\n  Run \`clifolio init\` to create a config file, or provide a valid path.`
     );
   }
 
@@ -48,7 +48,7 @@ export async function loadFromGist(username: string): Promise<Portfolio> {
       {
         headers: {
           Accept: "application/vnd.github.v3+json",
-          "User-Agent": "termfolio-cli",
+          "User-Agent": "clifolio-cli",
         },
       }
     );
@@ -81,20 +81,20 @@ export async function loadFromGist(username: string): Promise<Portfolio> {
   }>;
 
   const gist = gists.find((g) =>
-    Object.keys(g.files).some((f) => f === "termfolio.yml")
+    Object.keys(g.files).some((f) => f === "clifolio.yml")
   );
 
   if (!gist) {
     throw new Error(
-      `No termfolio.yml gist found for @${username}.\n\n  To set up your portfolio:\n    1. Run \`termfolio init\` to create a config file\n    2. Create a public GitHub Gist named "termfolio.yml"\n    3. Paste your config content into the gist`
+      `No clifolio.yml gist found for @${username}.\n\n  To set up your portfolio:\n    1. Run \`clifolio init\` to create a config file\n    2. Create a public GitHub Gist named "clifolio.yml"\n    3. Paste your config content into the gist`
     );
   }
 
-  const file = gist.files["termfolio.yml"];
+  const file = gist.files["clifolio.yml"];
   const rawRes = await fetch(file.raw_url);
 
   if (!rawRes.ok) {
-    throw new Error(`Failed to fetch termfolio.yml content: ${rawRes.status}`);
+    throw new Error(`Failed to fetch clifolio.yml content: ${rawRes.status}`);
   }
 
   const content = await rawRes.text();
@@ -104,7 +104,7 @@ export async function loadFromGist(username: string): Promise<Portfolio> {
     data = loadYaml(content);
   } catch {
     throw new Error(
-      `Invalid YAML in @${username}'s termfolio.yml gist. The gist content has syntax errors.`
+      `Invalid YAML in @${username}'s clifolio.yml gist. The gist content has syntax errors.`
     );
   }
 
