@@ -78,10 +78,10 @@ export async function runInit(outputPath: string = "clifolio.yml") {
   });
 
   try {
-    const name = await prompt(rl, "Your name", "Jane Doe");
-    const title = await prompt(rl, "Your title", "Software Developer");
-    const tagline = await prompt(rl, "Your tagline", "Building cool things");
-    const github = await prompt(rl, "GitHub username", "username");
+    const name = await prompt(rl, "Your name", "e.g. Jane Doe");
+    const title = await prompt(rl, "Your title", "e.g. Software Developer");
+    const tagline = await prompt(rl, "Your tagline", "e.g. Building cool things");
+    const github = await prompt(rl, "GitHub username", "e.g. janedoe");
 
     const content = TEMPLATE
       .replace("{{NAME}}", name)
