@@ -1,0 +1,46 @@
+{
+  "name": "termfolio",
+  "version": "1.0.0",
+  "description": "A CLI that generates a beautiful interactive terminal-based portfolio/resume from a YAML config",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "termfolio": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "terminal",
+    "portfolio",
+    "resume",
+    "cli",
+    "interactive"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "figlet": "^1.10.0",
+    "ink": "^6.6.0",
+    "ink-big-text": "^2.0.0",
+    "ink-gradient": "^4.0.0",
+    "ink-spinner": "^5.0.0",
+    "js-yaml": "^4.1.1",
+    "open": "^11.0.0",
+    "react": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.7.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.2.1",
+    "@types/react": "^19.2.13",
+    "typescript": "^5.9.3"
+  }
+}
