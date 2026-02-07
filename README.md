@@ -36,11 +36,55 @@ npx clifolio init
 
 ## 📋 Setup Your Portfolio
 
-1. Run `npx clifolio init` to scaffold your `clifolio.yml`
-2. Edit the file with your details
-3. Preview locally: `npx clifolio --file clifolio.yml`
-4. Create a **public** GitHub Gist named `clifolio.yml`
-5. Share: `npx clifolio @yourgithubusername`
+### Step 1: Create your config file
+
+```bash
+npx clifolio init
+```
+
+This will interactively ask for your name, title, tagline, and GitHub username, then generate a `clifolio.yml` file.
+
+### Step 2: Edit your config
+
+Open `clifolio.yml` and fill in your skills, experience, projects, education, and contact info. See the [Config Reference](#-config-reference) below for all available fields.
+
+### Step 3: Preview locally
+
+```bash
+npx clifolio --file clifolio.yml
+```
+
+Make sure everything looks good before publishing.
+
+### Step 4: Publish to GitHub Gist
+
+This is how other people will access your portfolio from anywhere in the world.
+
+1. Go to [gist.github.com](https://gist.github.com)
+2. Set the filename to exactly **`clifolio.yml`**
+3. Paste the contents of your local `clifolio.yml` into the gist
+4. Click **"Create public gist"** (must be public, not secret!)
+
+> ⚠️ The gist filename **must** be `clifolio.yml` — this is how the CLI finds your portfolio.
+
+### Step 5: Share your portfolio
+
+Once your gist is live, anyone can view your portfolio by running:
+
+```bash
+npx clifolio @yourgithubusername
+```
+
+That's it! No servers, no hosting, no deployments. Your portfolio lives as a simple gist and is viewable from any terminal in the world.
+
+### How it works under the hood
+
+When someone runs `npx clifolio @username`, the CLI:
+1. Calls the GitHub API to list the user's public gists
+2. Finds the gist containing a file named `clifolio.yml`
+3. Downloads the raw YAML content
+4. Validates it against the schema
+5. Renders the interactive portfolio in the terminal
 
 ## Usage
 
