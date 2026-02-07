@@ -28,7 +28,20 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
     .description(
       "Portfolios that live in the terminal."
     )
-    .version("1.0.0");
+    .version("1.0.0")
+    .addHelpText("after", `
+${chalk.cyan("─── How to publish your portfolio ───")}
+
+  1. Run ${chalk.bold("npx clifolio init")} to create your clifolio.yml
+  2. Edit the file with your details (skills, projects, etc.)
+  3. Preview locally: ${chalk.bold("npx clifolio --file clifolio.yml")}
+  4. Go to ${chalk.underline("https://gist.github.com")}
+  5. Create a ${chalk.bold("public")} gist with filename ${chalk.bold("clifolio.yml")}
+  6. Paste your config content and save
+
+  Anyone can now view your portfolio from any terminal:
+  ${chalk.bold("npx clifolio @yourgithubusername")}
+`);
 
   program
     .command("init")
@@ -60,15 +73,7 @@ export async function parseCli(argv: string[]): Promise<CliOptions> {
         console.log("  Examples:");
         console.log("    npx clifolio @depapp");
         console.log("    npx clifolio --file portfolio.yml --theme dracula\n");
-        console.log(chalk.cyan("  ─── How to publish your portfolio ───\n"));
-        console.log("    1. Run " + chalk.bold("npx clifolio@latest init") + " to create your clifolio.yml");
-        console.log("    2. Edit the file with your details (skills, projects, etc.)");
-        console.log("    3. Preview locally: " + chalk.bold("npx clifolio --file clifolio.yml"));
-        console.log("    4. Go to " + chalk.underline("https://gist.github.com"));
-        console.log("    5. Create a " + chalk.bold("public") + " gist with filename " + chalk.bold("clifolio.yml"));
-        console.log("    6. Paste your config content and save\n");
-        console.log("    Anyone can now view your portfolio from any terminal:");
-        console.log(chalk.bold("    npx clifolio @yourgithubusername\n"));
+        console.log(chalk.dim("  Run " + chalk.bold("npx clifolio --help") + chalk.dim(" to learn how to publish your portfolio.\n")));
         process.exit(0);
       }
       result = {
